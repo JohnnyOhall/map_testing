@@ -50,11 +50,9 @@ function initMap() {
         map: map
       });
   }
-  
+
   addMarkersArray()
   google.maps.event.addListener(map, 'click', event => placeMarker(event.latLng));
 }
-
-
 
 window.initMap = initMap;
