@@ -2,7 +2,6 @@
 
 function initMap() {
   // Map options
-
   let marker, map;
 
   const options = {center: { lat: 51.5072, lng: 0.1276 }, zoom: 10.5}
@@ -36,7 +35,7 @@ function initMap() {
 
       { location: {lat: 51.48734741698893, lng: -0.12450705936751787},
         imageIcon: {
-          url: "https://w7.pngwing.com/pngs/11/611/png-transparent-daniel-craig-james-bond-film-series-skyfall-eve-moneypenny-james-bond-necktie-business-film.png",
+          url: "https://64.media.tumblr.com/avatar_4735d73a6dbb_128.pnj",
           scaledSize},
         content: `<h2> Game of thrones S02E01 (2014) </h2>`}
     ];
@@ -50,7 +49,7 @@ function initMap() {
       marker = new google.maps.Marker({
         position: location,
         map,
-        draggable: true,
+        // draggable: true,
       });
       
       let lat = marker.getPosition().lat();
