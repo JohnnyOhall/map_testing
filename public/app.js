@@ -2,14 +2,16 @@
 
 function initMap() {
   // Map options
-  const options = {center: { lat: 51.5072, lng: 0.1276 }, zoom: 10.5}
+
   let marker, map;
+
+  const options = {center: { lat: 51.5072, lng: 0.1276 }, zoom: 10.5}
 
   // New Map
   map = new google.maps.Map(document.getElementById("map"), options);
 
   // Add marker
-  function addMarker(property) {
+  const addMarker = property => {
     const marker = new google.maps.Marker({position: property.location, map});
 
     // Check for custom icon
@@ -47,8 +49,13 @@ function initMap() {
       marker.setPosition(location):
       marker = new google.maps.Marker({
         position: location,
-        map: map
+        map,
+        draggable: true,
       });
+      
+      let lat = marker.getPosition().lat();
+      let lng = marker.getPosition().lng();
+      console.log(`lat: ${lat}, lng: ${lng}`)
   }
 
   addMarkersArray()
@@ -56,3 +63,5 @@ function initMap() {
 }
 
 window.initMap = initMap;
+
+// https://stackoverflow.com/questions/6910847/get-boundaries-longitude-and-latitude-from-current-zoom-google-maps  <--- Lat long limits
